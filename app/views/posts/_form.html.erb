@@ -1,0 +1,38 @@
+<!---
+<#%= form_with(model: post, local: true) do |form| %>
+  <#% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><#%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <#% post.errors.full_messages.each do |message| %>
+        <li><#%= message %></li>
+      <#% end %>
+      </ul>
+    </div>
+  <#% end %>
+
+  <div class="actions">
+    <#%= form.submit %>
+  </div>
+<#% end %>
+-->
+
+
+
+<%= simple_form_for(@post) do |post| %>
+<% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+    <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+	<%= post.input :name %>
+	<%= post.check_box :f_type %><br>
+	<%= post.submit %>
+<% end %>
