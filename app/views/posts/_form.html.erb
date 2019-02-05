@@ -33,6 +33,7 @@
   </div>
 <% end %>
 	<%= post.input :name %>
+  <%= post.file_field :note_image, multiple: true, direct_upload: true %>
 	<%= post.check_box :f_type %><br>
 	<%= post.submit %>
 <% end %>
