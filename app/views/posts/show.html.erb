@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= @post.note_image.each do |n_img| %>
-  <%= image_tag (n_img.variant(resize: "300x300") )%><br>
+<%= @post.note_image.each do |n_imgs| %>
+  <%= image_tag (n_imgs.variant(resize: "300x300") )%><br>
 <% end %><br>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
